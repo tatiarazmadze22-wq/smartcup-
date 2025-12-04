@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Cup</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{line-height:1.6;color:#333;background:#f5f5f5;}
+header{display:flex;justify-content:space-between;padding:20px 50px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.1);position:sticky;top:0;z-index:100;}
+.logo{font-size:24px;font-weight:bold;color:#ff5722;}
+nav ul{list-style:none;display:flex;gap:20px;}
+nav ul li a{text-decoration:none;color:#333;font-weight:500;transition:color 0.3s;}
+nav ul li a:hover{color:#ff5722;}
+.hero{display:flex;justify-content:space-around;align-items:center;padding:100px 50px;background:linear-gradient(to right,#ffe0b2,#fff3e0);}
+.hero-text h1{font-size:48px;margin-bottom:20px;}
+.hero-text p{font-size:20px;margin-bottom:30px;}
+.btn{padding:15px 30px;background:#ff5722;color:#fff;text-decoration:none;border-radius:30px;transition:background 0.3s;}
+.btn:hover{background:#e64a19;}
+.hero-img img{width:300px;height:auto;transition:0.3s;}
+.features-container{display:flex;justify-content:space-around;padding:50px;flex-wrap:wrap;gap:30px;}
+.feature{background:#fff;padding:30px;border-radius:15px;text-align:center;width:250px;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+.feature img{margin-bottom:20px;}
+section{padding:80px 50px;}
+form{display:flex;flex-direction:column;gap:15px;}
+input,textarea{padding:15px;border-radius:10px;border:1px solid #ccc;width:100%;}
+button{padding:15px;border-radius:10px;border:none;background:#ff5722;color:#fff;font-size:16px;cursor:pointer;}
+button:hover{background:#e64a19;}
+.fade-in{animation:fadeIn 2s ease forwards;opacity:0;}
+@keyframes fadeIn{to{opacity:1;}}
+.slide-in{animation:slideIn 1s ease forwards;transform:translateX(-50px);opacity:0;}
+@keyframes slideIn{to{transform:translateX(0);opacity:1;}}
+.bounce{animation:bounce 2s infinite;}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-20px);}}
+.pop-in{animation:popIn 1s ease forwards;transform:scale(0);opacity:0;}
+@keyframes popIn{to{transform:scale(1);opacity:1;}}
+footer{background:#fff3e0;padding:20px;text-align:center;margin-top:50px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Smart Cup</div>
+  <nav>
+    <ul>
+      <li><a href="#features">ფუნქციები</a></li>
+      <li><a href="#about">მომხმარებელისთვის</a></li>
+      <li><a href="#contact">კონტაქტი</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1 class="fade-in">ჭკვიანი ჭიქა შენთვის</h1>
+    <p class="fade-in">გაგრილება, ადუღება და ტემპერატურის შენარჩუნება – ერთი ჭიქიდან!</p>
+    <a href="#features" class="btn slide-in">გაიგე მეტი</a>
+  </div>
+  <div class="hero-img bounce">
+    <img src="https://via.placeholder.com/300x400?text=Smart+Cup" alt="Smart Cup">
+  </div>
+</section>
+
+<section id="features">
+  <h2 class="fade-in">მთავარი ფუნქციები</h2>
+  <div class="features-container">
+    <div class="feature pop-in">
+      <img src="https://via.placeholder.com/100?text=Boil" alt="Automatic Boil">
+      <h3>ადუღება თავისით</h3>
+      <p>Smart Cup ადუღებს წყალს ავტომატურად, მხოლოდ ერთი ღილაკით.</p>
+    </div>
+    <div class="feature pop-in">
+      <img src="https://via.placeholder.com/100?text=Temp" alt="Temperature Control">
+      <h3>ტემპერატურის შენარჩუნება</h3>
+      <p>შეინარჩუნე სასურველი ტემპერატურა საათობით.</p>
+    </div>
+    <div class="feature pop-in">
+      <img src="https://via.placeholder.com/100?text=Alert" alt="Smart Alert">
+      <h3>ჭკვიანი შეტყობინებები</h3>
+      <p>შენთვის სასურველი დროის შემდეგ ჭიქა გატყობინებს, რომ სვამო!</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="fade-in">რატომ Smart Cup?</h2>
+  <p class="fade-in">ჩვენი ჭიქა არა მხოლოდ ინოვაციური პროდუქტია, არამედ თქვენი ყოველდღიური კომფორტის გარანტია.</p>
+</section>
+
+<section id="contact">
+  <h2 class="fade-in">დაგვიკავშირდით</h2>
+  <form class="fade-in">
+    <input type="text" placeholder="სახელი" required>
+    <input type="email" placeholder="ელ.ფოსტა" required>
+    <textarea placeholder="მესიჯი" required></textarea>
+    <button type="submit">გაგზავნა</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 Smart Cup. ყველა უფლება დაცულია.</p>
+</footer>
+
+<script>
+const btn = document.querySelector('.btn');
+btn.addEventListener('click', () => {
+  alert('გმადლობთ, რომ გაინტერესებთ Smart Cup-ის ფუნქციები!');
+});
+
+const heroImg = document.querySelector('.hero-img img');
+heroImg.addEventListener('mouseenter', () => {
+  heroImg.src = 'https://via.placeholder.com/300x400/ffccbc?text=Hot+Smart+Cup';
+});
+heroImg.addEventListener('mouseleave', () => {
+  heroImg.src = 'https://via.placeholder.com/300x400?text=Smart+Cup';
+});
+
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  alert('თქვენი მესიჯი გაგზავნილია! მალე დაგიკავშირდებით.');
+  form.reset();
+});
+</script>
+
+</body>
+</html>
